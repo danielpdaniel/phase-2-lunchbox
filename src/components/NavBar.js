@@ -2,7 +2,11 @@ import React from "react";
 
 function NavBar(){
     return (
-        <h1> Nav Bar </h1>
+        <nav>
+            <a>Home</a>
+            <a>Add Food</a>
+            <a>All Foods</a>
+        </nav>
     )
 }
 

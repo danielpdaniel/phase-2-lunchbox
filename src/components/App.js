@@ -5,12 +5,15 @@ import NavBar from "./NavBar";
 import FoodItem from "./FoodItem";
 import FoodList from "./FoodList";
 import NewFoodInput from "./NewFoodInput";
+import PicnicBasket from "./PicnicBasket";
 
 /*
 App
 |-NavBar - (NewFoodInput, FoodList, Home/PicnicBasket)
 |-FoodList
-  |-FoodItem
+|-PicnicBasket
+  |-FoodItem.map
+|-NewFoodInput
 */
 
 function App() {
@@ -29,11 +32,14 @@ function App() {
         <Route path="/newfood">
           <NewFoodInput />
         </Route>
-        <Route path="/foods">
-          {foods ? foods.map(food=><FoodItem />) : <h2>Loading...</h2>}
-        </Route>
         <Route path="foodlist">
           <FoodList />
+        </Route>
+        <Route exact path="/">
+         <PicnicBasket foods={foods}/>
+        </Route>
+        <Route path="*">
+          <h2>404 not found</h2>
         </Route>
       </Switch>
     </div>

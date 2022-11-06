@@ -1,9 +1,9 @@
 import React from "react";
 
-function FoodItem(){
+function FoodItem({ food }){
     
     return (
-        <h2> Food Item!m</h2>
+        <h2> {food.name}</h2>
     )
 }
 
