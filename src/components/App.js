@@ -13,6 +13,7 @@ App
 |-FoodList
 |-PicnicBasket
   |-FoodItem.map
+    |-Drop down showing food story
 |-NewFoodInput
 */
 

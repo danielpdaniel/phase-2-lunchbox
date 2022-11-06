@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
 code {
@@ -25,8 +26,32 @@ nav a {
   margin: 1rem 2rem;
   text-decoration: none;
   font-size: 1.2em;
-  color: firebrick;
-  border-bottom: 2px solid firebrick;
+  color: cornflowerblue;
+  border-bottom: 2px solid cornflowerblue;
   transition: 0.1s;
+}
+
+.foodItem {
+   /* display:inline-table; */
+   /* position: absolute; */
+   float:left; 
+   display:inline; 
+   width: 49%;
+   background-color: palevioletred;
+   width: 8rem;
+   /* border: 10px; */
+   border-radius: 7px;
+   font-size: medium;
+   padding-right: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   padding-top: 1px;
+   margin: 10px;
+}
+
+.foodItem img {
+max-width: 7rem;
+height: 7rem;
+object-fit: cover;
 }
 
