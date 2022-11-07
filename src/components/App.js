@@ -26,14 +26,18 @@ function App() {
     .then(data=>setFoods(data))
   },[])
 
+  function handleFormSubmit(newFoodObj){
+    console.log(newFoodObj)
+  }
+
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route path="/newfood">
-          <NewFoodInput />
+          <NewFoodInput onFormSubmit={handleFormSubmit}/>
         </Route>
-        <Route path="foodlist">
+        <Route path="/foodlist">
           <FoodList />
         </Route>
         <Route exact path="/">
