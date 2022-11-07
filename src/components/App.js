@@ -27,7 +27,16 @@ function App() {
   },[])
 
   function handleFormSubmit(newFoodObj){
-    console.log(newFoodObj)
+    // console.log(newFoodObj)
+    fetch("http://localhost:3001/foods",{
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(newFoodObj)
+    })
+    .then(resp=>resp.json())
+    .then(data=>setFoods(...foods, data))
   }
 
   return (
