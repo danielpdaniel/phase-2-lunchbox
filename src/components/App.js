@@ -36,8 +36,9 @@ function App() {
       body: JSON.stringify(newFoodObj)
     })
     .then(resp=>resp.json())
-    .then(data=>setFoods(...foods, data))
+    .then(data=>setFoods([...foods, data]))
   }
+  console.log(foods)
 
   return (
     <div className="App">
