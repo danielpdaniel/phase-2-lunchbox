@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {Switch, Route} from "react-router-dom";
 import '../App.css';
 import NavBar from "./NavBar";
-import FoodItem from "./FoodItem";
+import About from "./About";
 import FoodList from "./FoodList";
 import NewFoodInput from "./NewFoodInput";
 import PicnicBasket from "./PicnicBasket";
@@ -49,6 +49,9 @@ function App() {
         </Route>
         <Route path="/foodlist">
           <FoodList />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route exact path="/">
          <PicnicBasket foods={foods}/>
