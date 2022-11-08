@@ -11,9 +11,13 @@ function FoodItem({ food }){
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
             <h3> {food.name}</h3>
             <img src={food.image} alt={food.imageAlt}/>
-            {!clicked ? null :
-            <p>{food.story}</p>}
+        <br></br>
             <button onClick={handleClick}>{!clicked ? "\u25BC" : "\u25B2"}</button>
+            {!clicked ? null :
+            <div className="expandedFoodStory">
+            <h3>{food.origin}</h3>
+            <p>{food.story}</p>
+            </div>}
         </div>
     )
 }

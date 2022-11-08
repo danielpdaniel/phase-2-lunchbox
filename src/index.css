@@ -78,7 +78,7 @@ nav a.active {
     /* display:inline-table; */
     /* position: absolute; */
     float:left; 
-    display:inline; 
+    display: inline; 
     width: 49%;
     background-color: var(--secondaryColor);
     width: 16rem;
@@ -97,13 +97,16 @@ nav a.active {
   height: 7rem;
   object-fit: cover;
   }
-  
-  .foodItemExpanded p {
+
+  .foodItemExpanded .expandedFoodStory {
     background-color: var(--mainColor);
     padding: 5px;
     border-radius: 7px;
     text-align: left;
+    margin: 5px;
   }
+
+
 
 .newFoodForm {
   /* border-bottom: 2px solid var(--background-light);
@@ -127,13 +130,14 @@ nav a.active {
   max-width: 300px;
 }
 
-
 .newFoodForm input, textarea {
   /* position: relative; */
   /* float: left 50%; */
   /* display:inline; */
   /* align-items: center; */
-  display: block
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -157,4 +161,15 @@ button {
   border: none;
   border-radius: 10px;
   color: var(--tertiaryColor)
+}
+
+input[type=submit] {
+  background-color: var(--accentColor);
+  border: none;
+  border-radius: 10px;
+  color: var(--tertiaryColor);
+  padding: 8px;
+  font-size: large;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
