@@ -44,5 +44,8 @@
   "devDependencies": {
     "gh-pages": "^4.0.0",
     "json-server": "^0.17.1"
-  }
+  },
+  
+  "homepage": "https://danielpdaniel.github.io/phase-2-lunchbox/"
+  
 }
