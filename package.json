@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "server": "json-server --watch db.json -p 3001",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +41,5 @@
   },
   "devDependencies": {
     "json-server": "^0.17.1"
-  },
+  }
 }
