@@ -14,6 +14,14 @@ function NewFoodInput({ onFormSubmit }){
 
     const [image, setImage] = useState(false);
 
+    function foodItemCapitalization(textInput){
+        const inputWords = textInput.split(" ");
+        const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
+        const capCasedWords = capCasedWordsArr.join(" ")
+        return capCasedWords
+        // console.log(capCasedWords)
+    }
+
     function handleChange(e){
         const name = e.target.name
         switch(e.target.name){
@@ -42,9 +50,14 @@ function NewFoodInput({ onFormSubmit }){
     function handleSubmit(e){
         e.preventDefault()
         console.log("submitted!")
+        
+        const capCasedName = foodItemCapitalization(foodName);
+        const capCasedCity = foodItemCapitalization(foodCity);
+        const capCasedCountry = foodCountry.toUpperCase().includes("UNITED STATES") ? "U.S.A." : foodItemCapitalization(foodCountry);
+        
        const newFoodObj = {
-            "name": foodName,
-            "origin": `${foodCity}, ${foodCountry}`,
+            "name": capCasedName,
+            "origin": `${capCasedCity}, ${capCasedCountry}`,
             "image": foodImg,
             "imageAlt": imgAlt,
             "story": foodStory

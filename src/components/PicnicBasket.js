@@ -5,7 +5,7 @@ function PicnicBasket({ foods }){
     return (
         <div>
             <h1> HOME ! </h1>
-            {foods ? foods.map(food=> <FoodItem key={food.name} food={food}/>) : <h2>Loading...</h2>}
+            {foods ? foods.map(food=> <FoodItem key={food.id} food={food}/>) : <h2>Loading...</h2>}
         </div>
     )
 }
