@@ -40,9 +40,10 @@ nav a {
 
 nav a.active {
   background-color: var(--accentColor);
-  /* padding-left: 3px;
-  padding-right: 3px; */
-  border: 3px solid var(--tertiaryColor);
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 7px;
+  /* border: 3px solid var(--tertiaryColor); */
   /* color: var(--secondaryColor); */
 }
 

@@ -4,19 +4,19 @@ function FoodItem({ food }){
     const [clicked, setClicked] = useState(false)
     
     function handleClick(){
-        // setClicked(clicked => !clicked)
+        setClicked(clicked => !clicked)
     }
 
-    function handleMouseOver(){
-        setClicked(true)
-    }
+    // function handleMouseOver(){
+    //     setClicked(true)
+    // }
 
-    function handleMouseOut(){
-        setClicked(false)
-    }
+    // function handleMouseOut(){
+    //     setClicked(false) 
+    // }
     
     return (
-        <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={!clicked ? "foodItem" : "foodItemExpanded"}>
+        <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
             <h3> {food.name}</h3>
             <img src={food.image} alt={food.imageAlt}/>
         <br></br>
