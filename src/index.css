@@ -187,6 +187,8 @@ button {
   font-size: large;
   margin-top: 10px;
   margin-bottom: 10px;
+  transition: 300ms
+
 }
 
 input[type=submit] {
@@ -198,4 +200,21 @@ input[type=submit] {
   font-size: large;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.about {
+  position:absolute;
+  display:contents;
+  float: left;
+  
+}
+
+.about p {
+  background-color: var(--secondaryColor);
+  display:inline-flex;
+  padding: 5px;
+  border-radius: 7px;
+  text-align: left;
+  max-width: 500px;
+
 }
