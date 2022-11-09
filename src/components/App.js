@@ -13,7 +13,7 @@ App
 |-FoodList
 |-PicnicBasket
   |-FoodItem.map
-    |-Drop down showing food story
+    |-(+Drop down showing food story)
 |-NewFoodInput
 */
 
@@ -47,7 +47,7 @@ function App() {
           <NewFoodInput onFormSubmit={handleFormSubmit}/>
         </Route>
         <Route path="/foodlist">
-          <FoodList />
+          <FoodList foods={foods}/>
         </Route>
         <Route path="/about">
           <About />

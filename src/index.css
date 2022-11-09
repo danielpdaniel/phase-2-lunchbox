@@ -219,3 +219,12 @@ input[type=submit] {
   max-width: 500px;
 
 }
+
+.foodList p {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 2px;
+
+}

@@ -12,7 +12,7 @@ function NewFoodInput({ onFormSubmit }){
     const [imgAlt, setImgAlt] = useState("");
     const [foodStory, setFoodStory] = useState("");
 
-    const [image, setImage] = useState(false);
+    const [previewImage, setPreviewImage] = useState(false);
 
     function foodItemCapitalization(textInput){
         const inputWords = textInput.split(" ");
@@ -36,7 +36,7 @@ function NewFoodInput({ onFormSubmit }){
                 break;
             case "image":
                 setFoodImg(e.target.value);
-                setImage(e.target.value)
+                setPreviewImage(e.target.value)
                 break;
             case "altText":
                 setImgAlt(e.target.value);
@@ -47,13 +47,25 @@ function NewFoodInput({ onFormSubmit }){
     // console.log("name:", foodName, "city:", foodCity, "country:", foodCountry, "image:", foodImg, "alt:", imgAlt, "story:", foodStory)
     }
 
+    // function clearForm(){
+    //     setFoodName("");
+    //     setFoodCity("");
+    //     setFoodCountry("");
+    //     setFoodImg("");
+    //     setImgAlt("");
+    //     setFoodStory("");
+    // }
+
     function handleSubmit(e){
         e.preventDefault()
         console.log("submitted!")
         
-        const capCasedName = foodItemCapitalization(foodName);
-        const capCasedCity = foodItemCapitalization(foodCity);
-        const capCasedCountry = foodCountry.toUpperCase().includes("UNITED STATES") ? "U.S.A." : foodItemCapitalization(foodCountry);
+        const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
+        const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
+        const capCasedCountry = 
+        foodCountry ? 
+        foodCountry.toUpperCase().includes("UNITED STATES") ? "U.S.A." : foodItemCapitalization(foodCountry)
+         : null;
         
        const newFoodObj = {
             "name": capCasedName,
@@ -93,9 +105,9 @@ function NewFoodInput({ onFormSubmit }){
             </label>
             <label>Image URL:
                 <input type="text" name="image" placeholder="image url" onChange={handleChange}/>
-                {image ? 
+                {previewImage ? 
                 <p className="imgPreview">Image Preview:
-                <img className="imgPreview" src={image}/> 
+                <img className="imgPreview" src={previewImage}/> 
                 </p>
                 : null}
             </label>
