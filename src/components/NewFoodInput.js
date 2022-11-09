@@ -47,18 +47,19 @@ function NewFoodInput({ onFormSubmit }){
     // console.log("name:", foodName, "city:", foodCity, "country:", foodCountry, "image:", foodImg, "alt:", imgAlt, "story:", foodStory)
     }
 
-    // function clearForm(){
-    //     setFoodName("");
-    //     setFoodCity("");
-    //     setFoodCountry("");
-    //     setFoodImg("");
-    //     setImgAlt("");
-    //     setFoodStory("");
-    // }
+    function clearForm(){
+        setFoodName("");
+        setFoodCity("");
+        setFoodCountry("");
+        setFoodImg("");
+        setImgAlt("");
+        setFoodStory("");
+        setPreviewImage(false);
+    }
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log("submitted!")
+        // console.log("submitted!")
         
         const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
@@ -87,7 +88,8 @@ function NewFoodInput({ onFormSubmit }){
         }else if(foodStory.length === 0){
             alert("Food story required!")
         }else{
-        onFormSubmit(newFoodObj)
+        onFormSubmit(newFoodObj);
+        clearForm();
         }
     }
 
@@ -97,14 +99,14 @@ function NewFoodInput({ onFormSubmit }){
         <h2>what's a food that reminds you of home? Tell us about it below!</h2>
         <form className="newFoodForm" onSubmit={handleSubmit}>
             <label> What's this food called? 
-                <input type="text" name="name" placeholder="What's this food called?" onChange={handleChange}/>
+                <input type="text" name="name" placeholder="What's this food called?" onChange={handleChange} value={foodName}/>
             </label>
             <label>Where did you eat this food?
-                <input type="text" name="city" placeholder="City?" onChange={handleChange}/>
-                <input type="text" name="country" placeholder="Country?" onChange={handleChange}/>
+                <input type="text" name="city" placeholder="City?" onChange={handleChange} value={foodCity}/>
+                <input type="text" name="country" placeholder="Country?" onChange={handleChange} value={foodCountry}/>
             </label>
             <label>Image URL:
-                <input type="text" name="image" placeholder="image url" onChange={handleChange}/>
+                <input type="text" name="image" placeholder="image url" onChange={handleChange} value={foodImg}/>
                 {previewImage ? 
                 <p className="imgPreview">Image Preview:
                 <img className="imgPreview" src={previewImage}/> 
@@ -112,10 +114,10 @@ function NewFoodInput({ onFormSubmit }){
                 : null}
             </label>
             <label>Image Alt Text
-                <input type="text" name="altText" placeholder="short image description" onChange={handleChange}/>
+                <input type="text" name="altText" placeholder="short image description" onChange={handleChange} value={imgAlt}/>
             </label>
             <label>A Fond Memory of This Food:
-                <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange}/>
+                <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange} value={foodStory}/>
             </label>
                 <input type="submit" name="submit" value="Add Food!"/>
         </form>
