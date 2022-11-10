@@ -14,6 +14,8 @@ function NewFoodInput({ onFormSubmit }){
 
     const [previewImage, setPreviewImage] = useState(false);
 
+    const [btnClassName, setBtnClassName] = useState(null);
+
     function foodItemCapitalization(textInput){
         const inputWords = textInput.split(" ");
         const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
@@ -119,7 +121,7 @@ function NewFoodInput({ onFormSubmit }){
             <label>A Fond Memory of This Food:
                 <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange} value={foodStory}/>
             </label>
-                <input type="submit" name="submit" value="Add Food!"/>
+                <input type="submit" name="submit" value="Add Food!" onMouseDown={()=>setBtnClassName("clicked")} onMouseUp={()=>setBtnClassName(null)} className={btnClassName}/>
         </form>
         </div>
     )

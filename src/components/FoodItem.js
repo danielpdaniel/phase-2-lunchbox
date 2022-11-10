@@ -20,7 +20,7 @@ function FoodItem({ food }){
             <h3> {food.name}</h3>
             <img src={food.image} alt={food.imageAlt}/>
         <br></br>
-            <button onClick={handleClick}>{!clicked ? "Food Story \u25BC" : "Close \u25B2"}</button>
+            <button onClick={handleClick} className={clicked? "clicked" : null}>{!clicked ? "Food Story \u25BC" : "Close \u25B2"}</button>
             {!clicked ? null :
             <div className="expandedFoodStory">
             <h4>{food.origin}</h4>

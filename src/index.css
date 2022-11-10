@@ -128,7 +128,7 @@ h1, h2, h3 {
     margin: 5px;
   }
 
-  .foodItemExpanded button {
+  .clicked, input[type=submit].clicked {
   background-color: var(--tertiaryColor);
   border: none;
   border-radius: 10px;
@@ -194,7 +194,7 @@ textarea {
   display: block;
 }
 
-button {
+button, input[type=submit] {
   background-color: var(--accentColor);
   border: none;
   border-radius: 10px;
@@ -207,7 +207,7 @@ button {
 
 }
 
-input[type=submit] {
+/* input[type=submit] {
   background-color: var(--accentColor);
   border: none;
   border-radius: 10px;
@@ -216,7 +216,7 @@ input[type=submit] {
   font-size: large;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 
 .about {
   position:absolute;
