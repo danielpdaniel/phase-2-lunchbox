@@ -94,7 +94,7 @@ function NewFoodInput({ onFormSubmit }){
     }
 
     return (
-        <div>
+        <div className="newFoodFormContainer">
         <h1> What Are You Bringing to Our Lil Picnic? </h1>
         <h2>what's a food that reminds you of home? Tell us about it below!</h2>
         <form className="newFoodForm" onSubmit={handleSubmit}>
