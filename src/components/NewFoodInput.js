@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function NewFoodInput({ onFormSubmit }){
-    //new food obj to patch to db.json
+    //new food obj for POST to db.json
     const [newFood, setNewFood] = useState("");
     
     //state variables for controlled inputs
@@ -21,7 +21,7 @@ function NewFoodInput({ onFormSubmit }){
         const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
         const capCasedWords = capCasedWordsArr.join(" ")
         return capCasedWords
-        // console.log(capCasedWords)
+        
     }
 
     function handleChange(e){
@@ -46,7 +46,6 @@ function NewFoodInput({ onFormSubmit }){
             case "story":
                 setFoodStory(e.target.value);
         }
-    // console.log("name:", foodName, "city:", foodCity, "country:", foodCountry, "image:", foodImg, "alt:", imgAlt, "story:", foodStory)
     }
 
     function clearForm(){
@@ -61,8 +60,8 @@ function NewFoodInput({ onFormSubmit }){
 
     function handleSubmit(e){
         e.preventDefault()
-        // console.log("submitted!")
         
+        /*Capitalizes first letter of Name, City, and Country and makes country inputs w value of "united states"=> "U.S.A." */
         const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
         const capCasedCountry = 
@@ -77,6 +76,16 @@ function NewFoodInput({ onFormSubmit }){
             "imageAlt": imgAlt,
             "story": foodStory
         }
+
+    /*no capcasing or U.S.A. replacement */
+    // const newFoodObj = {
+    //             "name": foodName,
+    //             "origin": `${foodCity}, ${foodCountry}`,
+    //             "image": foodImg,
+    //             "imageAlt": imgAlt,
+    //             "story": foodStory
+    //         }
+
         if(foodName.length === 0){
             alert("Food name required!")
         }else if(foodCity.length === 0){
