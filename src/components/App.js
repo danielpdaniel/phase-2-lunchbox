@@ -43,21 +43,17 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/newfood">
-          <NewFoodInput onFormSubmit={handleFormSubmit}/>
-        </Route>
-        <Route path="/foodlist">
-          <FoodList foods={foods}/>
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route exact path="/">
-         <PicnicBasket foods={foods}/>
-        </Route>
-        <Route path="*">
-          <h2>404 not found</h2>
-        </Route>
+        <Route path="/newfood" children={<NewFoodInput onFormSubmit={handleFormSubmit}/>} />
+          
+        <Route path="/foodlist" children={<FoodList foods={foods}/>} />
+
+        <Route path="/about" children={<About />} />
+        
+        <Route exact path="/" children={<PicnicBasket foods={foods}/>} />
+         
+        <Route path="*" children={<h2>404 not found</h2>} />
+          
+
       </Switch>
     </div>
   );

@@ -97,8 +97,8 @@ function NewFoodInput({ onFormSubmit }){
 
     return (
         <div className="newFoodFormContainer">
-        <h1> What Are You Bringing to Our Lil Picnic? </h1>
-        <h2>what's a food that reminds you of home? Tell us about it below!</h2>
+        <h2> What Are You Bringing to Our Lil Picnic? </h2>
+        <h3>what's a food that reminds you of home? Tell us about it below!</h3>
         <form className="newFoodForm" onSubmit={handleSubmit}>
             <label> What's this food called? 
                 <input type="text" name="name" placeholder="What's this food called?" onChange={handleChange} value={foodName}/>
