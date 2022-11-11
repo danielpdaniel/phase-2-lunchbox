@@ -21,14 +21,14 @@ function App() {
   const [foods, setFoods] = useState(false)
 
   useEffect(()=>{
-    fetch("http://localhost:3001/foods")
+    fetch("https://phase-2-lunchbox-data.onrender.com/foods")
     .then(resp=>resp.json())
     .then(data=>setFoods(data))
   },[])
 
   function handleFormSubmit(newFoodObj){
     // console.log(newFoodObj)
-    fetch("http://localhost:3001/foods",{
+    fetch("https://phase-2-lunchbox-data.onrender.com/foods",{
       method: "POST",
       headers: {
         "Content-type": "application/json"
