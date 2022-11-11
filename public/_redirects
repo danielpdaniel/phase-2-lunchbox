@@ -1,6 +1,3 @@
 # redirects page!
 
-/newfood /newfood
-/foodlist /foodlist
-/about /about
-/ /
+/*    /index.html   200
