@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import {username, password} from "./temp/temp";
 
 
 function AdminLogin({ onAdminLogin, loginStatus }){
-    
+
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
 
@@ -22,8 +23,8 @@ function AdminLogin({ onAdminLogin, loginStatus }){
     function handleLogin(e){
         e.preventDefault();
         
-        if(usernameInput === "test"){
-            if(passwordInput === "test"){
+        if(usernameInput === username){
+            if(passwordInput === password){
                 onAdminLogin(true);
                 setUsernameInput("");
                 setPasswordInput("");
