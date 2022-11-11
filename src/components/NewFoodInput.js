@@ -45,6 +45,7 @@ function NewFoodInput({ onFormSubmit }){
                 break;
             case "story":
                 setFoodStory(e.target.value);
+                break;
             default:
                 console.log("hmmm")
         }
@@ -122,7 +123,7 @@ function NewFoodInput({ onFormSubmit }){
                 <input type="text" name="image" placeholder="image url" onChange={handleChange} value={foodImg}/>
                 {previewImage ? 
                 <p className="imgPreview">Image Preview:
-                <img alt="preview image for link submission" className="imgPreview" src={previewImage}/> 
+                <img alt="preview for link submission" className="imgPreview" src={previewImage}/> 
                 </p>
                 : null}
             </label>
