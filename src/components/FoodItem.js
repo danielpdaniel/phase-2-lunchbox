@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 
-function FoodItem({ food }){
+function FoodItem({ food, loginStatus, onFoodDelete }){
     const [clicked, setClicked] = useState(false)
     
     function handleClick(){
         setClicked(clicked => !clicked)
+    }
+
+    function handleDelete(){
+        fetch(`https://phase-2-lunchbox-data.onrender.com/foods/${food.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json"
+            }
+        })
+        .then(resp=>resp.json())
+        .then(()=>onFoodDelete(food))
     }
 
     // function handleMouseOver(){
@@ -17,6 +28,7 @@ function FoodItem({ food }){
     
     return (
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
+            {loginStatus ? <button onClick={handleDelete}>X</button> : null}
             <h3> {food.name}</h3>
             <img src={food.image} alt={food.imageAlt}/>
         <br></br>

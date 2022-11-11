@@ -6,6 +6,7 @@ import About from "./About";
 import FoodList from "./FoodList";
 import NewFoodInput from "./NewFoodInput";
 import PicnicBasket from "./PicnicBasket";
+import AdminLogin from "./AdminLogin";
 
 /*
 App
@@ -19,6 +20,7 @@ App
 
 function App() {
   const [foods, setFoods] = useState(false)
+  const [loginStatus, setLoginStatus] = useState(false);
 
   useEffect(()=>{
     fetch("https://phase-2-lunchbox-data.onrender.com/foods")
@@ -39,6 +41,15 @@ function App() {
     .then(data=>setFoods([...foods, data]))
   }
 
+  function handleAdminLogin(value){
+    setLoginStatus(value);
+  }
+
+  function handleFoodDelete(deletedFood){
+    const newFoodList = foods.filter(food => food.id !== deletedFood.id)
+    setFoods(newFoodList)
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -53,9 +64,11 @@ function App() {
           <About />
         </Route>
         <Route exact path="/">
-         <PicnicBasket foods={foods}/>
+         <PicnicBasket foods={foods} loginStatus={loginStatus} onFoodDelete={handleFoodDelete}/>
         </Route>
-
+        <Route exact path="/adminlogin">
+          <AdminLogin onAdminLogin={handleAdminLogin} loginStatus={loginStatus}/>
+        </Route>
         <Route path="*">
           <h2>404 not found</h2>
         </Route>
