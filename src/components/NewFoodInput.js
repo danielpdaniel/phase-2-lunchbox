@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function NewFoodInput({ onFormSubmit }){
     //new food obj for POST to db.json
-    const [newFood, setNewFood] = useState("");
+    // const [newFood, setNewFood] = useState("");
     
     //state variables for controlled inputs
     const [foodName, setFoodName] = useState("");
@@ -25,7 +25,7 @@ function NewFoodInput({ onFormSubmit }){
     }
 
     function handleChange(e){
-        const name = e.target.name
+       
         switch(e.target.name){
             case "name":
                 setFoodName(e.target.value);
@@ -45,6 +45,8 @@ function NewFoodInput({ onFormSubmit }){
                 break;
             case "story":
                 setFoodStory(e.target.value);
+            default:
+                console.log("hmmm")
         }
     }
 
@@ -120,7 +122,7 @@ function NewFoodInput({ onFormSubmit }){
                 <input type="text" name="image" placeholder="image url" onChange={handleChange} value={foodImg}/>
                 {previewImage ? 
                 <p className="imgPreview">Image Preview:
-                <img className="imgPreview" src={previewImage}/> 
+                <img alt="preview image for link submission" className="imgPreview" src={previewImage}/> 
                 </p>
                 : null}
             </label>
