@@ -10,7 +10,6 @@ function NewFoodInput({ onFormSubmit }){
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
 
-    const [previewImage, setPreviewImage] = useState(false);
 
     const [btnClassName, setBtnClassName] = useState(null);
 
@@ -48,7 +47,7 @@ function NewFoodInput({ onFormSubmit }){
         setFoodCountry("");
        
         setFoodStory("");
-        setPreviewImage(false);
+        
     }
 
     function handleSubmit(e){
