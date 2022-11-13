@@ -4,7 +4,7 @@ import '../App.css';
 import NavBar from "./NavBar";
 import About from "./About";
 import FoodList from "./FoodList";
-import NewFoodInput from "./NewFoodInput";
+import AddFood from "./AddFood";
 import PicnicBasket from "./PicnicBasket";
 
 /*
@@ -43,8 +43,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/newfood">
-          <NewFoodInput onFormSubmit={handleFormSubmit}/>
+        <Route path="/addfood">
+          <AddFood onFormSubmit={handleFormSubmit}/>
         </Route>
         <Route path="/foodlist">
           <FoodList foods={foods}/>
