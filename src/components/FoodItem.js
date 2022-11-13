@@ -7,17 +7,11 @@ function FoodItem({ food }){
         setClicked(clicked => !clicked)
     }
 
-    // function handleMouseOver(){
-    //     setClicked(true)
-    // }
-
-    // function handleMouseOut(){
-    //     setClicked(false) 
-    // }
+    const foodClassName = food.name.length <= 15 ? "standardFoodTitle" : "longFoodTitle"
     
     return (
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
-            <h4> {food.name}</h4>
+            <h4 className={foodClassName}>{food.name}</h4>
             <div className="cardEmojis">{food.emoji? food.emoji : "🍽"}</div>
         <br></br>
             <button onClick={handleClick} className={clicked? "clicked" : null}>{!clicked ? "Food Story \u25BC" : "Close \u25B2"}</button>
