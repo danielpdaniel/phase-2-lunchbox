@@ -25,6 +25,9 @@ function AddFood({ onFormSubmit }){
         switch(e.target.name){
             case "name":
                 setFoodName(e.target.value);
+                if(foodName.length > 36){
+                    alert("Max Food Name Length Exceeded!")
+                }
                 break;
             case "city":
                 setFoodCity(e.target.value);
@@ -85,9 +88,10 @@ function AddFood({ onFormSubmit }){
     }
 
     return (
-        <div className="newFoodFormContainer">
+    <div className="newFoodFormContainer">
         <h2> What Are You Bringing to Our Lil Picnic? </h2>
         <h3>what's a food that reminds you of home? Tell us about it below!</h3>
+
         <form className="newFoodForm" onSubmit={handleSubmit}>
             <FormInput name="name" label="What's this food called?" value={foodName} placeholder="Food Name" onChange={handleChange}/>
             <FormInput name="city" label="Where did you eat this food?" value={foodCity} placeholder="City" onChange={handleChange}>
@@ -99,7 +103,7 @@ function AddFood({ onFormSubmit }){
             </label>
             <input type="submit" name="submit" value="Add Food!" onMouseDown={()=>setBtnClassName("clicked")} onMouseUp={()=>setBtnClassName(null)} className={btnClassName}/>
         </form>
-        </div>
+     </div>
     )
 }
 
