@@ -1,6 +1,6 @@
 # Our Lil' Picnic Basket
 
-Our Lil' Picnic Basket is a Single Page React App for sharing fond memories about food with each other.
+Our Lil' Picnic Basket is a Single Page React App for sharing fond memories about food with each other. I was inspired by the many recommendations of "you've got to try this!!" I've gotten from others upon them learning I haven't eaten their favorite food before. I think people love to share their favorite foods with each other and I hope this can help fascilitate that. Even if you don't have a food to submit, feel free to check out the existing submissions on the home page, though fair warning! They might just make you hungry...
 
 The site is currently live [here](https://incandescent-toffee-ab615c.netlify.app/)!
 
