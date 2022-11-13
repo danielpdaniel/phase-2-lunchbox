@@ -13,6 +13,9 @@ function NewFoodInput({ onFormSubmit }){
 
     const [btnClassName, setBtnClassName] = useState(null);
 
+    const emojiArray = ["🍽","🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🍓","🫐","🍈","🍒","🍑","🥭","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥬","🥒","🌶","🫑","🌽","🥕","🫒","🧄","🧅","🥔","🍠","🥐","🥯","🍞","🥖","🥨","🧀","🥚","🍳","🧈","🥞","🧇","🥓","🥩","🍗","🍖","🦴","🌭","🍔","🍟","🍕","🫓","🥪","🥙","🧆","🌮","🌯","🫔","🥗","🥘","🫕","🥫","🫙","🍝","🍜","🍲","🍛","🍣","🍱","🥟","🦪","🍤","🍙","🍚","🍘","🍥","🥠","🥮","🍢","🍡","🍧","🍨","🍦","🥧","🧁","🍰","🎂","🍮","🍭","🍬","🍫","🍿","🍩","🍪","🌰","🥜","🫘","🍯","🥛","🫗","🍼","🫖","☕️","🍵","🧃","🥤","🧋","🍶","🍺","🍻","🥂","🍷","🥃","🍸","🍹","🧉","🍾","🧊","🥄","🍴","🥣","🥡","🥢","🧂"]
+
+
     function foodItemCapitalization(textInput){
         const inputWords = textInput.split(" ");
         const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
@@ -102,6 +105,13 @@ function NewFoodInput({ onFormSubmit }){
                 <input type="text" name="city" placeholder="City" onChange={handleChange} value={foodCity}/>
                 <input type="text" name="country" placeholder="Country" onChange={handleChange} value={foodCountry}/>
             </label>
+            <label>Is there an Emoji to go with this food?
+            <div>
+                <select name="emojiSelect" id="emojis">
+                    {emojiArray.map(emoji=><option>{emoji}</option>)}
+                </select>
+            </div>
+           </label>
             <label>A Fond Memory of This Food:
                 <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange} value={foodStory}/>
             </label>
