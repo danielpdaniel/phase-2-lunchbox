@@ -9,6 +9,7 @@ function NewFoodInput({ onFormSubmit }){
     const [foodCity, setFoodCity] = useState("");
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
+    const [foodEmoji, setFoodEmoji] = useState("🍽")
 
 
     const [btnClassName, setBtnClassName] = useState(null);
@@ -35,6 +36,9 @@ function NewFoodInput({ onFormSubmit }){
                 break;
             case "country":
                 setFoodCountry(e.target.value);
+                break;
+            case "emojiSelect":
+                setFoodEmoji(e.target.value);
                 break;
             case "story":
                 setFoodStory(e.target.value);
@@ -67,6 +71,7 @@ function NewFoodInput({ onFormSubmit }){
        const newFoodObj = {
             "name": capCasedName,
             "origin": `${capCasedCity}, ${capCasedCountry}`,
+            "emoji": foodEmoji,
             "story": foodStory
         }
 
@@ -107,7 +112,7 @@ function NewFoodInput({ onFormSubmit }){
             </label>
             <label>Is there an Emoji to go with this food?
             <div>
-                <select name="emojiSelect" id="emojis">
+                <select name="emojiSelect" id="emojis" onChange={handleChange}>
                     {emojiArray.map(emoji=><option>{emoji}</option>)}
                 </select>
             </div>

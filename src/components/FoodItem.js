@@ -18,6 +18,7 @@ function FoodItem({ food }){
     return (
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
             <h4> {food.name}</h4>
+            <div className="cardEmojis">{food.emoji? food.emoji : "🍽"}</div>
         <br></br>
             <button onClick={handleClick} className={clicked? "clicked" : null}>{!clicked ? "Food Story \u25BC" : "Close \u25B2"}</button>
             {!clicked ? null :
