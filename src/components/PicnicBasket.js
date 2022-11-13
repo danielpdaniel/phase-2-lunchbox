@@ -9,8 +9,8 @@ function PicnicBasket({ foods }){
     
     return (
         <div className = "foodItemsContainer">
-            <h2> HOME ! </h2>
-            <h3>Our Lil' Picnic Basket</h3>
+            <h2>Our Lil' Picnic Basket</h2>
+            <h3>Check out our tasty submissions below!</h3>
             {foods ? reversedFoods.map(food=> <FoodItem key={food.id} food={food} />) : <h2>Loading...</h2>}
         </div>
     )

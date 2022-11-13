@@ -4,15 +4,16 @@ import EmojiSelector from "./EmojiSelector";
 
 function AddFood({ onFormSubmit }){
     
-    //state variables for controlled inputs
+    //state variables for controlled inputs:
     const [foodName, setFoodName] = useState("");
     const [foodCity, setFoodCity] = useState("");
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
-    const [foodEmoji, setFoodEmoji] = useState("")
+    const [foodEmoji, setFoodEmoji] = useState("");
+    //for styling:
     const [btnClassName, setBtnClassName] = useState(null);
 
-
+    //functions to handle user input and submissions:
     function foodItemCapitalization(textInput){
         const inputWords = textInput.split(" ");
         const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
@@ -46,14 +47,14 @@ function AddFood({ onFormSubmit }){
         setFoodName("");
         setFoodCity("");
         setFoodCountry("");
-        
+        setFoodEmoji("")
         setFoodStory("");
     }
 
     function handleSubmit(e){
         e.preventDefault()
         
-        /*Capitalizes first letter of Name, City, and Country and makes country inputs w value of "united states"=> "U.S.A." */
+        /*Capitalizes first letter of Name, City, and Country, makes country inputs w value of "united states"=> "U.S.A." */
         const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
         const capCasedCountry = 
@@ -68,6 +69,7 @@ function AddFood({ onFormSubmit }){
             "story": foodStory
         }
 
+        //alerts if empty input fields, submits if all have entries
         if(foodName.length === 0){
             alert("Food name required!")
         }else if(foodCity.length === 0){
