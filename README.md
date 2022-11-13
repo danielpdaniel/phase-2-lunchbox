@@ -21,6 +21,8 @@ Feel free to check out the site and even add your own foods over at [Our Lil Pic
 
 ## Sources and Contributions
 
+The site used [create-react-app](https://create-react-app.dev/docs/getting-started) to set up the initial starter code as well as [this json server template by lizbur10 on github](https://github.com/learn-co-curriculum/json-server-template) to set up the initial backend directory.
+
 The site uses [json-server](https://www.npmjs.com/package/json-server) and [Render](https://render.com/) to host its backend data, with its front end hosted on [Netlify](https://www.netlify.com/).
 
 This app was made for Flatiron School's Software Engineering Flex Program Phase 2. I've learned a lot this phase! Thank you!!
