@@ -38,6 +38,8 @@ function NewFoodInput({ onFormSubmit }){
                 setFoodCountry(e.target.value);
                 break;
             case "emojiSelect":
+                e.target.value === "Select Emoji..." ?
+                setFoodEmoji("🍽") :
                 setFoodEmoji(e.target.value);
                 break;
             case "story":
@@ -112,7 +114,8 @@ function NewFoodInput({ onFormSubmit }){
             </label>
             <label>Is there an Emoji to go with this food?
             <div>
-                <select name="emojiSelect" id="emojis" onChange={handleChange}>
+                <select name="emojiSelect" id="emojis" onChange={handleChange} className="selectEmojis">
+                    <option>Select Emoji...</option>
                     {emojiArray.map(emoji=><option>{emoji}</option>)}
                 </select>
             </div>

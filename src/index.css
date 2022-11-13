@@ -90,6 +90,10 @@ h1, h2, h3 {
   .cardEmojis {
     font-size: 7rem;
   }
+
+  .selectEmojis {
+    font-size: 1rem;
+  }
   
   .foodItem p {
     background-color: var(--mainColor);
