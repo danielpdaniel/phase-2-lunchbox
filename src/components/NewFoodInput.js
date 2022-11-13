@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 
 function NewFoodInput({ onFormSubmit }){
-    //new food obj for POST to db.json
-    // const [newFood, setNewFood] = useState("");
     
     //state variables for controlled inputs
     const [foodName, setFoodName] = useState("");
     const [foodCity, setFoodCity] = useState("");
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
-    const [foodEmoji, setFoodEmoji] = useState("🍽")
-
-
+    const [foodEmoji, setFoodEmoji] = useState("")
     const [btnClassName, setBtnClassName] = useState(null);
 
     const emojiArray = ["🍽","🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥬","🥒","🌶","🌽","🥕","🧄","🧅","🥔","🍠","🥐","🥯","🍞","🥖","🥨","🧀","🥚","🍳","🧈","🥞","🧇","🥓","🥩","🍗","🍖","🦴","🌭","🍔","🍟","🍕","🥪","🥙","🧆","🌮","🌯","🥗","🥘","🥫","🍝","🍜","🍲","🍛","🍣","🍱","🥟","🦪","🍤","🍙","🍚","🍘","🍥","🥠","🥮","🍢","🍡","🍧","🍨","🍦","🥧","🧁","🍰","🎂","🍮","🍭","🍬","🍫","🍿","🍩","🍪","🌰","🥜","🍯","🥛","🍼","☕️","🍵","🧃","🥤","🍶","🍺","🍻","🥂","🍷","🥃","🍸","🍹","🧉","🍾","🧊","🥄","🍴","🥣","🥡","🥢","🧂"]
@@ -38,8 +34,6 @@ function NewFoodInput({ onFormSubmit }){
                 setFoodCountry(e.target.value);
                 break;
             case "emojiSelect":
-                e.target.value === "Select Emoji..." ?
-                setFoodEmoji("🍽") :
                 setFoodEmoji(e.target.value);
                 break;
             case "story":
@@ -54,9 +48,8 @@ function NewFoodInput({ onFormSubmit }){
         setFoodName("");
         setFoodCity("");
         setFoodCountry("");
-       
-        setFoodStory("");
         
+        setFoodStory("");
     }
 
     function handleSubmit(e){
@@ -73,18 +66,9 @@ function NewFoodInput({ onFormSubmit }){
        const newFoodObj = {
             "name": capCasedName,
             "origin": `${capCasedCity}, ${capCasedCountry}`,
-            "emoji": foodEmoji,
+            "emoji": foodEmoji === "Select Emoji..." ? "🍽" : foodEmoji,
             "story": foodStory
         }
-
-    /*no capcasing or U.S.A. replacement */
-    // const newFoodObj = {
-    //             "name": foodName,
-    //             "origin": `${foodCity}, ${foodCountry}`,
-    //             "image": foodImg,
-    //             "imageAlt": imgAlt,
-    //             "story": foodStory
-    //         }
 
         if(foodName.length === 0){
             alert("Food name required!")
@@ -114,7 +98,7 @@ function NewFoodInput({ onFormSubmit }){
             </label>
             <label>Is there an Emoji to go with this food?
             <div>
-                <select name="emojiSelect" id="emojis" onChange={handleChange} className="selectEmojis">
+                <select name="emojiSelect" id="emojis" onChange={handleChange} className="selectEmojis" value={foodEmoji}>
                     <option>Select Emoji...</option>
                     {emojiArray.map(emoji=><option>{emoji}</option>)}
                 </select>
