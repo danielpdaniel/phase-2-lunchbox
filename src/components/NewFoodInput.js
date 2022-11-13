@@ -96,11 +96,11 @@ function NewFoodInput({ onFormSubmit }){
         <h3>what's a food that reminds you of home? Tell us about it below!</h3>
         <form className="newFoodForm" onSubmit={handleSubmit}>
             <label> What's this food called? 
-                <input type="text" name="name" placeholder="What's this food called?" onChange={handleChange} value={foodName}/>
+                <input type="text" name="name" placeholder="Food Name" onChange={handleChange} value={foodName}/>
             </label>
             <label>Where did you eat this food?
-                <input type="text" name="city" placeholder="City?" onChange={handleChange} value={foodCity}/>
-                <input type="text" name="country" placeholder="Country?" onChange={handleChange} value={foodCountry}/>
+                <input type="text" name="city" placeholder="City" onChange={handleChange} value={foodCity}/>
+                <input type="text" name="country" placeholder="Country" onChange={handleChange} value={foodCountry}/>
             </label>
             <label>A Fond Memory of This Food:
                 <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange} value={foodStory}/>
