@@ -25,7 +25,7 @@ function AddFood({ onFormSubmit }){
         switch(e.target.name){
             case "name":
                 setFoodName(e.target.value);
-                if(foodName.length > 36){
+                if(foodName.length > 28){
                     alert("Max Food Name Length Exceeded!")
                 }
                 break;

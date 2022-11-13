@@ -9,12 +9,14 @@ import PicnicBasket from "./PicnicBasket";
 
 /*
 App
-|-NavBar - (NewFoodInput, FoodList, Home/PicnicBasket)
+|-NavBar - (AddFood, FoodList, Home/PicnicBasket)
 |-FoodList
 |-PicnicBasket
   |-FoodItem.map
-    |-(+Drop down showing food story)
-|-NewFoodInput
+    |->expands to show food origin + story
+|-AddFood
+  |-FormInput
+  |-EmojiSelector
 */
 
 function App() {
