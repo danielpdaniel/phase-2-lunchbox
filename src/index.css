@@ -298,3 +298,13 @@ button, input[type=submit] {
   margin: 1px;
   border-radius: 3px;
 }
+
+.clickedYumsAndEws {
+  display: inline;
+  background-color: var(--tertiaryColor);
+  color: var(--accentColor);
+  text-align:start;
+  padding: 0;
+  margin: 1px;
+  border-radius: 3px;
+}

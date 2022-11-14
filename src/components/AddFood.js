@@ -69,7 +69,9 @@ function AddFood({ onFormSubmit }){
             "name": capCasedName,
             "origin": `${capCasedCity}, ${capCasedCountry}`,
             "emoji": foodEmoji === "Select Emoji..." ? "🍽" : foodEmoji,
-            "story": foodStory
+            "story": foodStory,
+            "yums": 0,
+            "ews": 0
         }
 
         //alerts if empty input fields, submits if all have entries

@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
-function LikesDislikes(){
+function LikesDislikes({ btnText, text, foodId, upDownVoteNum }){
+    const [clicked, setClicked] = useState(false);
+    const [votesNum, setVotesNum] = useState(upDownVoteNum)
+
+    function handleClick(){
+        // setClicked(clicked=> !clicked)
+       const postBody = text === "yums" ?
+       {
+        yums: !clicked ? votesNum + 1 : votesNum - 1
+       } :
+       {
+        ews: !clicked ? votesNum + 1 : votesNum - 1
+       }
+        fetch(`https://phase-2-lunchbox-data.onrender.com/foods/${foodId}`,{
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(postBody)
+        })
+        .then(r=>r.json())
+        .then(data=>{
+            
+            setClicked(clicked=>!clicked);
+            setVotesNum(data[`${text}`]);
+        })
+        
+    }
+
     return (
         <div>
-        <button className="yumsAndEws">Yum!</button>
-            <h5 className="yumsAndEws">1 Yums</h5>
-            <br></br>
-        <button className="yumsAndEws">Ew!</button>
-            <h5 className="yumsAndEws">0 Ews</h5>
+        <button onClick={handleClick} className={!clicked ? "yumsAndEws" : "clickedYumsAndEws"}>{btnText}</button>
+            <h5 className="yumsAndEws">{votesNum} {text}</h5>
         </div>
     )
 }
