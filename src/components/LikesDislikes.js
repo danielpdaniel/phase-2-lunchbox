@@ -32,7 +32,7 @@ function LikesDislikes({ btnText, text, foodId, upDownVoteNum }){
     return (
         <div>
         <button onClick={handleClick} className={!clicked ? "yumsAndEws" : "clickedYumsAndEws"}>{btnText}</button>
-            <h5 className="yumsAndEws">{votesNum} {text}</h5>
+            <h5 className="yumsAndEws">{votesNum} {votesNum === 1 ? text.slice(0, text.length-1) : text}</h5>
         </div>
     )
 }
