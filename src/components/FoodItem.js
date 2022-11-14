@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LikesDislikes from "./LikesDislikes";
 
 function FoodItem({ food }){
     const [clicked, setClicked] = useState(false)
@@ -20,6 +21,7 @@ function FoodItem({ food }){
             <h5>{food.origin}</h5>
             <p>{food.story}</p>
             </div>}
+            <LikesDislikes />
         </div>
     )
 }
