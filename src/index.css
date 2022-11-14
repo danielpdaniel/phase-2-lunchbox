@@ -1,6 +1,6 @@
 :root {
-  --mainColor: antiquewhite;
-  --secondaryColor: palevioletred;
+  --mainColor: cornsilk;
+  --secondaryColor: rgb(220, 91, 91);
   --tertiaryColor: cornflowerblue;
   --accentColor: midnightblue;
 
@@ -185,15 +185,15 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: flex-end; */
   background-color: var(--secondaryColor);
-  border-radius: 7px;
-  position:relative;
-  float: left;
+  border-radius: 10px;
+  /* position:relative; */
+  /* float: left; */
   /* display:block; */
   left:auto;
   margin: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 5px;
+  padding-top: 8px;
   padding-bottom: 5px;
   text-align: left;
   max-width: 300px;
@@ -265,14 +265,18 @@ button, input[type=submit] {
 
 .about p {
   background-color: var(--secondaryColor);
-  float:left;
-  display:inline-flex;
-  padding: 5px;
+  border-radius: 10px;
+  /* position:relative; */
+  /* float: left; */
+  /* display:block; */
+  left:auto;
   margin: 10px;
-  border-radius: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 5px;
   text-align: left;
-  max-width: 500px;
-
+  max-width: 300px;
 }
 
 
@@ -284,4 +288,17 @@ button, input[type=submit] {
   margin-bottom: 0px;
   padding: 2px;
 
+}
+
+.foodList ul {
+  background-color: var(--secondaryColor);
+  border-radius: 10px;
+  left:auto;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  text-align: left;
+  max-width: 300px;
 }
