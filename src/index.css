@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:var(--mainColor);
-  background: url(../public/gingham_pattern_small.png) repeat;
+  
 }
 
 code {
@@ -29,6 +29,11 @@ code {
   background-color: cornsilk;
 } */
 
+nav {
+  background: url(../public/gingham_pattern_small.png) repeat;
+  background-size: 20px;
+}
+
 nav a {
   display: inline-block;
   margin: 1rem 2rem;
@@ -36,11 +41,15 @@ nav a {
   font-size: 1.2em;
   color: var(--tertiaryColor);
   border-bottom: 2px solid var(--tertiaryColor);
-  transition: 0.1s;
+  background-color: var(--accentColor);
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 7px;
 }
 
 nav a.active {
-  background-color: var(--accentColor);
+  background-color: var(--tertiaryColor);
+  color: var(--accentColor);
   padding-left: 3px;
   padding-right: 3px;
   border-radius: 7px;
@@ -70,10 +79,8 @@ h1, h2, h3 {
    display:inline; 
    width: 49%;
    background-color: var(--secondaryColor);
-   /* background: url(../public/logo192.png) repeat; */
    width: 8rem;
    height: 322px;
-   /* border: 10px; */
    border-radius: 7px;
    font-size: medium;
    padding-right: 10px;
@@ -84,24 +91,19 @@ h1, h2, h3 {
    transition: all 300ms;
 }
 
-.foodItem img {
-  max-width: 7rem;
-  height: 7rem;
-  object-fit: scale-down;
-  }
-
   .cardEmojis {
     font-size: 7rem;
     /* box-shadow: 10px 10px 10px black; */
     filter: drop-shadow(-10px 10px 8px rgb(73, 7, 21));
-   
   }
+
 
   .selectEmojis {
     font-size: 1rem;
     background-color: var(--accentColor);
     color: var(--tertiaryColor);
     border-radius: 7px;
+
   }
   
   .foodItem p {
