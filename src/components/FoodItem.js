@@ -21,8 +21,10 @@ function FoodItem({ food }){
             <h5>{food.origin}</h5>
             <p>{food.story}</p>
             </div>}
+            <div className="votes">
             <LikesDislikes btnText="Yum!" text="yums" foodId={food.id} upDownVoteNum={food.yums}/>
             <LikesDislikes btnText="Ew!" text="ews" foodId={food.id} upDownVoteNum={food.ews}/>
+            </div>
         </div>
     )
 }

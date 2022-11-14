@@ -291,6 +291,12 @@ button, input[type=submit] {
   max-width: 300px;
 }
 
+.votes {
+  position: relative;
+  float: left;
+  text-align: left
+}
+
 .yumsAndEws {
   display: inline;
   text-align:start;
