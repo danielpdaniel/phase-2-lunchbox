@@ -44,23 +44,10 @@ nav a {
 nav a.active {
   background-color: var(--tertiaryColor);
   color: var(--accentColor);
-  /* padding-left: 3px;
-  padding-right: 3px; */
   border-bottom: 5px solid var(--accentColor);
   border-left: 5px solid var(--accentColor);
   border-radius: 10px;
-  /* border: 3px solid var(--tertiaryColor); */
-  /* color: var(--secondaryColor); */
 }
-
-/* .foodItemsContainer {
-  transition: all 300ms;
-} */
-
-/* .foodItemsContainer h1 {
-  text-align: left;
-  padding-left: 10%
-} */
 
 h1, h2, h3 {
   text-align: left;
@@ -68,14 +55,11 @@ h1, h2, h3 {
 }
 
 .foodItem {
-   /* display:inline-table; */
-   /* position: absolute; */
    float:left; 
    display:inline; 
    width: 49%;
    background-color: var(--secondaryColor);
    width: 8rem;
-   /* height: 322px; */
    border-radius: 7px;
    font-size: medium;
    padding-right: 10px;
@@ -88,7 +72,6 @@ h1, h2, h3 {
 
   .cardEmojis {
     font-size: 7rem;
-    /* box-shadow: 10px 10px 10px black; */
     filter: drop-shadow(-10px 10px 8px rgb(73, 7, 21));
   }
 
@@ -109,14 +92,11 @@ h1, h2, h3 {
   }
 
 .foodItemExpanded {
-    /* display:inline-table; */
-    /* position: absolute; */
     float:left; 
     display: inline; 
     width: 49%;
     background-color: var(--secondaryColor);
     width: 16rem;
-    /* border: 10px; */
     border-radius: 7px;
     font-size: medium;
     padding-right: 10px;
@@ -125,7 +105,6 @@ h1, h2, h3 {
     padding-top: 1px;
     margin: 10px;
     transition: all 300ms;
-    /* text-align:left; */
 }
 
 .foodItemExpanded img {
@@ -150,9 +129,6 @@ h1, h2, h3 {
     height: 19px;
     
   }
-  /* .foodItemExpanded .longFoodTitle{
-    padding-bottom: 12.3px;
-  } */
 
   .clicked, input[type=submit].clicked {
   background-color: var(--tertiaryColor);
@@ -168,17 +144,8 @@ h1, h2, h3 {
 
 
 .newFoodForm {
-  /* border-bottom: 2px solid var(--background-light);
-  border-top: 2px solid var(--background-light);
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end; */
   background-color: var(--secondaryColor);
   border-radius: 10px;
-  /* position:relative; */
-  /* float: left; */
-  /* display:block; */
   left:auto;
   margin: 10px;
   padding-left: 10px;
@@ -190,18 +157,10 @@ h1, h2, h3 {
 }
 
 .newFoodForm input, textarea {
-  /* position: relative; */
-  /* float: left 50%; */
-  /* display:inline; */
-  /* align-items: center; */
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
 }
-
-/* .newFoodFormContainer h2, h4 {
-  text-align: left;
-} */
 
 textarea {
   min-height: 8em;
@@ -232,27 +191,6 @@ button, input[type=submit] {
   cursor: pointer;
 }
 
-/* input[type=submit] {
-  background-color: var(--accentColor);
-  border: none;
-  border-radius: 10px;
-  color: var(--tertiaryColor);
-  padding: 8px;
-  font-size: large;
-  margin-top: 10px;
-  margin-bottom: 10px;
-} */
-
-/*
-.about {
-  position:absolute;
-  /* display:contents;
-  /* float: left; 
-  text-align: left;
-  padding-left: 10px;
-}
-*/
-
 .about p {
   background-color: var(--secondaryColor);
   border-radius: 10px;
@@ -266,8 +204,6 @@ button, input[type=submit] {
   text-align: left;
   max-width: 300px;
 }
-
-
 
 .foodList h4, li {
   text-align: left;
