@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import '../App.css';
 import NavBar from "./NavBar";
 import About from "./About";
 import FoodList from "./FoodList";

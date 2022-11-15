@@ -11,7 +11,7 @@ If you wish to run Our Lil' Picnic Bakset locally, Fork and clone the app from G
 npm install
 npm start
 ``` 
-in the project directory to install the dependencies listed in the package.json file and start the app in your local environment. The data for the project can be found [here](https://github.com/danielpdaniel/phase-2-lunchbox-data) if you would like to also run json-server on your local environment, though it would require you to update the fetch requests in the project files to the local port you choose to run the server on rather than its current [render hosted api](https://phase-2-lunchbox-data.onrender.com/foods)
+in the project directory to install the dependencies listed in the package.json file and start the app in your local environment. The data for the project can be found [here](https://github.com/danielpdaniel/phase-2-lunchbox-data) if you would like to also run json-server on your local environment, though it would require you to update the fetch requests in the project files to the local port you choose to run the server on rather than its current [Render hosted api](https://phase-2-lunchbox-data.onrender.com/foods)
 
 ## Usage
 
