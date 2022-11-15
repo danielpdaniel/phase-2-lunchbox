@@ -21,6 +21,7 @@ function AddFood({ onFormSubmit }){
         return capCasedWords
     }
 
+    //Handles form change by dynamically updating state values
     function handleChange(e){
         switch(e.target.name){
             case "name":
@@ -46,6 +47,7 @@ function AddFood({ onFormSubmit }){
         }
     }
 
+    //sets state values to "" to clear form
     function clearForm(){
         setFoodName("");
         setFoodCity("");
@@ -54,10 +56,11 @@ function AddFood({ onFormSubmit }){
         setFoodStory("");
     }
 
+    //Conditionally sends form data via callback fn to App handleFormSubmit() to make post requst for new food
     function handleSubmit(e){
         e.preventDefault()
         
-        /*Capitalizes first letter of Name, City, and Country, makes country inputs w value of "united states"=> "U.S.A." */
+        //Capitalizes first letter of Name, City, and Country, makes country inputs w value of "united states"=> "U.S.A."
         const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
         const capCasedCountry = 
@@ -65,6 +68,7 @@ function AddFood({ onFormSubmit }){
         foodCountry.toUpperCase().includes("UNITED STATES") ? "U.S.A." : foodItemCapitalization(foodCountry)
          : null;
         
+        //Data to be sent in post request
        const newFoodObj = {
             "name": capCasedName,
             "origin": `${capCasedCity}, ${capCasedCountry}`,
@@ -89,6 +93,7 @@ function AddFood({ onFormSubmit }){
         }
     }
 
+    //Renders form to gather new food submission data, includes FormInput and EmojiSelector components
     return (
     <div className="newFoodFormContainer">
         <h2> What Are You Bringing to Our Lil Picnic? </h2>

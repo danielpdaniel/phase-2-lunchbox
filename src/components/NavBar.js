@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar(){
+    //Provides Links to page Routes as setup in App
     return (
         <nav>
             <NavLink exact to="/">Home</NavLink>

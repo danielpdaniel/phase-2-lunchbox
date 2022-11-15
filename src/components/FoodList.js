@@ -1,9 +1,9 @@
 import React from "react";
 
 function FoodList({ foods }){
-    // console.log(foods)
     const alphabetizedFoods = foods ? foods.map(food => food.name).sort() : null;
-    // console.log(alphabetizedFoods)
+    
+    //renders a list of all the foods sorted alphabetically
     return (
         <div className="foodList">
             <h2> Food List ! </h2>
