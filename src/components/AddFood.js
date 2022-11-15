@@ -96,7 +96,7 @@ function AddFood({ onFormSubmit }){
     //Renders form to gather new food submission data, includes FormInput and EmojiSelector components
     return (
     <div className="newFoodFormContainer">
-        <h2> What Are You Bringing to Our Lil Picnic? </h2>
+        <h2> What Are You Bringing to Our Lil' Picnic? </h2>
         <h3>what's a food that reminds you of home? Tell us about it below!</h3>
 
         <form className="newFoodForm" onSubmit={handleSubmit}>
