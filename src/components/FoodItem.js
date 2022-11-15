@@ -6,8 +6,6 @@ function FoodItem({ food, onVote, clickedVotes }){
     const [clicked, setClicked] = useState(false)
 
     const params = useParams();
-    console.log(params)
-
 
     //For handling styling and expanded food cards info
     function handleClick(){

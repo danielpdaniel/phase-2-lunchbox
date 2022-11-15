@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LikesDislikes from "./LikesDislikes";
 
 
 function Food({foods, onVote, clickedVotes}){
     const params = useParams();
+
+    useEffect(()=>console.log(foods),[foods])
    
     console.log(params);
 
