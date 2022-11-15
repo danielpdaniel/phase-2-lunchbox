@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function LikesDislikes({ btnText, text, foodId, votesNum, onVote, clickedVotes }){
     const [clicked, setClicked] = useState(clickedVotes.includes(foodId+text) ? true : false);
