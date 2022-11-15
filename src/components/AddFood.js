@@ -9,7 +9,7 @@ function AddFood({ onFormSubmit }){
     const [foodCity, setFoodCity] = useState("");
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
-    const [foodEmoji, setFoodEmoji] = useState("");
+    const [foodEmoji, setFoodEmoji] = useState("🍽");
     //for styling:
     const [btnClassName, setBtnClassName] = useState(null);
 
@@ -37,7 +37,7 @@ function AddFood({ onFormSubmit }){
                 setFoodCountry(e.target.value);
                 break;
             case "emojiSelect":
-                const selectedEmoji = e.target.value === "Select Emoji..." ? null : e.target.value
+                const selectedEmoji = e.target.value === "Select Emoji..." ? "🍽" : e.target.value
                 setFoodEmoji(selectedEmoji);
                 break;
             case "story":
@@ -105,7 +105,9 @@ function AddFood({ onFormSubmit }){
             <FormInput name="city" label="Where did you eat this food?" value={foodCity} placeholder="City" onChange={handleChange}>
                 <input type="text" name="country" placeholder="Country" onChange={handleChange} value={foodCountry}/>
             </FormInput>
-            <EmojiSelector onChange={handleChange} foodEmoji={foodEmoji}/>
+            <label>Is there an emoji representing this food?
+                <EmojiSelector onChange={handleChange} foodEmoji={foodEmoji}/>
+            </label>
             {foodEmoji ? <div className="cardEmojis">{foodEmoji}</div> : null}
             <label>A Fond Memory of This Food:
                 <textarea type="textArea" name="story" placeholder="tell us a story..." onChange={handleChange} value={foodStory}/>
