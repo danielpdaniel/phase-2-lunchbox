@@ -72,7 +72,7 @@ function App() {
         <Route path="/addfood">
           <AddFood onFormSubmit={handleFormSubmit}/>
         </Route>
-        <Route path="/foodlist">
+        <Route path="/allfoods">
           <FoodList foods={foods}/>
         </Route>
         <Route path="/about">
