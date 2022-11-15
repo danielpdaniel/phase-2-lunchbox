@@ -5,6 +5,7 @@ import About from "./About";
 import FoodList from "./FoodList";
 import AddFood from "./AddFood";
 import PicnicBasket from "./PicnicBasket";
+import Food from "./Food";
 
 /* Component Hierarchy:
 App
@@ -75,11 +76,14 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/foods/new">
+        <Route path="/foods/new" name="New">
           <AddFood onFormSubmit={handleFormSubmit}/>
         </Route>
-        <Route path="/foods">
+        <Route exact path="/foods">
           <FoodList foods={foods}/>
+        </Route>
+        <Route path="/foods/:id">
+          <Food foods={foods} onVote={handleVote} clickedVotes={clickedVotes}/>
         </Route>
         <Route path="/about">
           <About />
