@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import About from "./About";
 import FoodList from "./FoodList";
@@ -23,6 +23,8 @@ function App() {
   const [foods, setFoods] = useState(false)
   //keeps track of which Yum! and Ew! buttons have been clicked to keep them clicked even after routing away from PicnicBasket page
   const [clickedVotes, setClickedVotes] = useState([])
+
+  const history = useHistory();
   
   //fetch to get initial set of foods data as side effect
   useEffect(()=>{
@@ -41,7 +43,10 @@ function App() {
       body: JSON.stringify(newFoodObj)
     })
     .then(resp=>resp.json())
-    .then(data=>setFoods([...foods, data]))
+    .then(data=>{
+      setFoods([...foods, data]);
+      history.push("/")
+    })
   }
 
    //Makes patch request to update likes/dislikes in database as well as state
@@ -70,10 +75,10 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/addfood">
+        <Route path="/foods/new">
           <AddFood onFormSubmit={handleFormSubmit}/>
         </Route>
-        <Route path="/allfoods">
+        <Route path="/foods">
           <FoodList foods={foods}/>
         </Route>
         <Route path="/about">

@@ -6,8 +6,8 @@ function NavBar(){
     return (
         <nav>
             <NavLink exact to="/">Home</NavLink>
-            <NavLink to="/addfood">Add Food</NavLink>
-            <NavLink to="/allfoods">All Foods</NavLink>
+            <NavLink exact to="/foods/new">Add Food</NavLink>
+            <NavLink exact to="/foods">All Foods</NavLink>
             <NavLink to="/about">About</NavLink>
         </nav>
     )
