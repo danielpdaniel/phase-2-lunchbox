@@ -3,14 +3,6 @@ import React, { useState } from "react";
 function LikesDislikes({ btnText, text, foodId, votesNum, onVote, clickedVotes }){
     const [clicked, setClicked] = useState(clickedVotes.includes(foodId+text) ? true : false);
 
-//    if(clickedVotes.includes(foodId+text)){
-//     setClicked(true)
-//    }
-
-    // useEffect(()=>{
-    //     console.log(clicked)
-    // }, [clicked])
-
     function handleClick(){
 
         const postBody = text === "yums" ?

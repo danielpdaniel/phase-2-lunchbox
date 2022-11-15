@@ -43,7 +43,7 @@ function AddFood({ onFormSubmit }){
                 setFoodStory(e.target.value);
                 break;
             default:
-                console.log("hmmm")
+                console.log("no input found")
         }
     }
 

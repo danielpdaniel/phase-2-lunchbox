@@ -6,7 +6,7 @@ import FoodList from "./FoodList";
 import AddFood from "./AddFood";
 import PicnicBasket from "./PicnicBasket";
 
-/* Nodes Tree:
+/* Component Hierarchy:
 App
 |-NavBar - ( Home/PicnicBasket, AddFood, FoodList, About)
 |-FoodList
@@ -19,10 +19,12 @@ App
 */
 
 function App() {
+  //food objects array fetched from db held in state
   const [foods, setFoods] = useState(false)
+  //keeps track of which Yum! and Ew! buttons have been clicked to keep them clicked even after routing away from PicnicBasket page
   const [clickedVotes, setClickedVotes] = useState([])
   
-  //fetch to get initial set of foods data
+  //fetch to get initial set of foods data as side effect
   useEffect(()=>{
     fetch("https://phase-2-lunchbox-data.onrender.com/foods")
     .then(resp=>resp.json())

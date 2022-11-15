@@ -9,12 +9,12 @@ function FoodItem({ food, onVote, clickedVotes }){
         setClicked(clicked => !clicked)
     }
 
-    const foodClassName = food.name.length <= 15 ? "standardFoodTitle" : "longFoodTitle"
+    const foodTitleClassName = food.name.length <= 15 ? "standardFoodTitle" : "longFoodTitle"
 
     //Renders a card containing food data that can be expanded to show more data, includes LikesDislikes components for upvoting and downvoting
     return (
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
-            <h4 className={foodClassName}>{food.name}</h4>
+            <h4 className={foodTitleClassName}>{food.name}</h4>
             <div className="cardEmojis">{food.emoji? food.emoji : "🍽"}</div>
         <br></br>
             <button onClick={handleClick} className={clicked? "clicked" : null}>{!clicked ? "Food Story \u25BC" : "Close \u25B2"}</button>
@@ -24,8 +24,8 @@ function FoodItem({ food, onVote, clickedVotes }){
             <p>{food.story}</p>
             </div>}
             <div className="votes">
-            <LikesDislikes btnText="Yum!" text="yums" foodId={food.id} votesNum={food.yums} onVote={onVote} clickedVotes={clickedVotes}/>
-            <LikesDislikes btnText="Ew!" text="ews" foodId={food.id} votesNum={food.ews} onVote={onVote} clickedVotes={clickedVotes}/>
+                <LikesDislikes btnText="Yum!" text="yums" foodId={food.id} votesNum={food.yums} onVote={onVote} clickedVotes={clickedVotes}/>
+                <LikesDislikes btnText="Ew!" text="ews" foodId={food.id} votesNum={food.ews} onVote={onVote} clickedVotes={clickedVotes}/>
             </div>
         </div>
     )

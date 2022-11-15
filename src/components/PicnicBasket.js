@@ -5,7 +5,7 @@ function PicnicBasket({ foods, onVote, clickedVotes }){
     
     const reversedFoods = foods ? [...foods].reverse() : null;
 
-    //Displays a FoodItem component for each food from oldest food => newest
+    //Displays a FoodItem component for each food from oldest => newest
     return (
         <div className = "foodItemsContainer">
             <h2>Our Lil' Picnic Basket</h2>
