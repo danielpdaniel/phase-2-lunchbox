@@ -160,6 +160,13 @@ h1, h2, h3 {
   max-width: 300px;
 }
 
+.newFoodForm textarea {
+  width: 295px;
+  min-width: 295px;
+  max-width: 295px;
+  max-height: 295px;
+}
+
 .newFoodForm input, textarea {
   display: block;
   margin-top: 5px;
