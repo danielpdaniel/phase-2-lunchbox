@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import About from "./About";
-import FoodList from "./FoodList";
+import Foods from "./Foods";
 import AddFood from "./AddFood";
-import PicnicBasket from "./PicnicBasket";
+import Home from "./Home";
 import Food from "./Food";
 
 /* Component Hierarchy:
 App
-|-NavBar - ( Home/PicnicBasket, AddFood, FoodList, About)
+|-NavBar - ( Home, AddFood, Foods, About)
 |-FoodList
+|-Food
+  |-LikesDislikes
 |-PicnicBasket
   |-FoodItem
     |-LikesDislikes
@@ -76,11 +78,11 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/foods/new" name="New">
+        <Route path="/foods/new" >
           <AddFood onFormSubmit={handleFormSubmit}/>
         </Route>
         <Route exact path="/foods">
-          <FoodList foods={foods}/>
+          <Foods foods={foods}/>
         </Route>
         <Route path="/foods/:id">
           <Food foods={foods} onVote={handleVote} clickedVotes={clickedVotes}/>
@@ -89,7 +91,7 @@ function App() {
           <About />
         </Route>
         <Route exact path="/">
-         <PicnicBasket foods={foods} onVote={handleVote} clickedVotes={clickedVotes} />
+         <Home foods={foods} onVote={handleVote} clickedVotes={clickedVotes} />
         </Route>
         <Route path="*">
           <h2>404 not found</h2>

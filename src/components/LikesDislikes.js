@@ -4,7 +4,6 @@ function LikesDislikes({ btnText, text, foodId, votesNum, onVote, clickedVotes }
     const [clicked, setClicked] = useState(clickedVotes.includes(foodId+text) ? true : false);
 
     function handleClick(){
-
         const postBody = text === "yums" ?
             {yums: !clicked ? votesNum + 1 : votesNum - 1} 
             :
@@ -15,7 +14,7 @@ function LikesDislikes({ btnText, text, foodId, votesNum, onVote, clickedVotes }
     }
    
 
-    //Uses props passed down from FoodItem to render button
+    //Uses props passed down from App to render button, renders singular yum or ew if votesNum value is 1
     return (
         <div>
         <button onClick={handleClick} className={!clicked ? "yumsAndEws" : "clickedYumsAndEws"}>{btnText}</button>
