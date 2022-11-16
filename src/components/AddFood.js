@@ -66,7 +66,7 @@ function AddFood({ onFormSubmit }){
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
         const capCasedCountry = 
         foodCountry ? 
-        foodCountry.toUpperCase().includes("UNITED STATES") ? "U.S.A." : foodItemCapitalization(foodCountry)
+        foodCountry.toUpperCase().includes("UNITED STATES") ? "USA" : foodItemCapitalization(foodCountry)
          : null;
         
         //Data to be sent in post request
