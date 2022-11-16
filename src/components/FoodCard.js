@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import LikesDislikes from "./LikesDislikes";
-import {useParams} from "react-router-dom";
 
 function FoodCard({ food, onVote, clickedVotes }){
     const [clicked, setClicked] = useState(false)
-
-    const params = useParams();
 
     //For handling styling and expanded food cards info
     function handleClick(){
