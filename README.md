@@ -15,14 +15,14 @@ in the project directory to install the dependencies listed in the package.json 
 
 ## Usage
 
-Upon entering Our Lil' Picnic Basket, visitors are invited to peruse the various food cards rendered to the home page. Each card represents a user submitted food that visitors may learn more about by clicking the "Food Story" button underneath the Food's name. Using the navigation links in the header, visitors can also check out the app's "Add Food", "All Foods", and "About" pages. The "Add Food" page allows visitors to submit their own food to be added to the site through state controlled form inputs. The "All Foods" page provides a list of all the foods that have been submitted so far in a handy alphabetized list. Lastly, the "About" page offers visitors a bit of info about the project as well as my goals for the app. 
+Upon entering Our Lil' Picnic Basket, visitors are invited to peruse the various food cards rendered to the home page. Each card represents a user submitted food that visitors may learn more about by clicking the "Food Story" button underneath the Food's name. Using the navigation links in the header, visitors can also check out the app's "Add Food", "All Foods", and "About" pages. The "Add Food" page allows visitors to submit their own food to be added to the site through state controlled form inputs. The "All Foods" page provides a list of all the foods that have been submitted so far in a handy alphabetized list. Clicking on one of these list items will bring users to a standalone page specifically for that food item. Lastly, the "About" page offers visitors a bit of info about the project as well as my goals for the app. 
 
-Feel free to check out the site and even add your own foods over at [Our Lil Picnic's Add Food Page](https://incandescent-toffee-ab615c.netlify.app/newfood)!
+Feel free to check out the site and even add your own foods over at [Our Lil Picnic's Add Food Page](https://incandescent-toffee-ab615c.netlify.app/foods/new)!
 
 ## Sources and Contributions
 
 The site used [create-react-app](https://create-react-app.dev/docs/getting-started) to set up the initial starter code as well as [this json server template by lizbur10 on github](https://github.com/learn-co-curriculum/json-server-template) to set up the initial backend directory.
 
-The site uses [json-server](https://www.npmjs.com/package/json-server) and [Render](https://render.com/) to host its backend data, with its front end hosted on [Netlify](https://www.netlify.com/).
+The site uses [JSON-server](https://www.npmjs.com/package/json-server) and [Render](https://render.com/) to host its backend data, with its front end hosted on [Netlify](https://www.netlify.com/).
 
 This app was made for Flatiron School's Software Engineering Flex Program Phase 2. I've learned a lot this phase! Thank you!!
