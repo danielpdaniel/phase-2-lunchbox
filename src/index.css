@@ -121,6 +121,7 @@ h1, h2, h3 {
     border-radius: 7px;
     text-align: left;
     margin: 5px;
+    transition: all 300ms;
   }
 
   .standardFoodTitle {
@@ -232,8 +233,9 @@ button, input[type=submit] {
 
 .votes {
   position: relative;
-  float: left;
-  text-align: left
+  /* float: left; */
+  text-align: left;
+  transition: all 300ms;
 }
 
 .yumsAndEws {
