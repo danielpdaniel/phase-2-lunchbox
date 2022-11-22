@@ -4,16 +4,14 @@ import EmojiSelector from "./EmojiSelector";
 
 function AddFood({ onFormSubmit }){
     
-    //state variables for controlled inputs:
     const [foodName, setFoodName] = useState("");
     const [foodCity, setFoodCity] = useState("");
     const [foodCountry, setFoodCountry] = useState("");
     const [foodStory, setFoodStory] = useState("");
     const [foodEmoji, setFoodEmoji] = useState("🍽");
-    //for styling:
+   
     const [btnClassName, setBtnClassName] = useState(null);
 
-    //functions to handle user input and submissions:
     function foodItemCapitalization(textInput){
         const inputWords = textInput.split(" ");
         const capCasedWordsArr = inputWords.map(word => word[0].toUpperCase() + word.substr(1));
@@ -21,7 +19,6 @@ function AddFood({ onFormSubmit }){
         return capCasedWords
     }
 
-    //Handles form change by dynamically updating state values
     function handleChange(e){
         switch(e.target.name){
             case "name":
@@ -48,7 +45,6 @@ function AddFood({ onFormSubmit }){
         }
     }
 
-    //sets state values to "" to clear form
     function clearForm(){
         setFoodName("");
         setFoodCity("");
@@ -57,11 +53,10 @@ function AddFood({ onFormSubmit }){
         setFoodStory("");
     }
 
-    //Conditionally sends form data via callback fn to App handleFormSubmit() to make post requst for new food
     function handleSubmit(e){
         e.preventDefault()
         
-        //Capitalizes first letter of Name, City, and Country, makes country inputs w value of "united states"=> "U.S.A."
+       
         const capCasedName = foodName ? foodItemCapitalization(foodName) : null;
         const capCasedCity = foodCity ? foodItemCapitalization(foodCity) : null;
         const capCasedCountry = 
@@ -69,7 +64,7 @@ function AddFood({ onFormSubmit }){
         foodCountry.toUpperCase().includes("UNITED STATES") ? "USA" : foodItemCapitalization(foodCountry)
          : null;
         
-        //Data to be sent in post request
+        
        const newFoodObj = {
             "name": capCasedName,
             "origin": `${capCasedCity}, ${capCasedCountry}`,
@@ -79,7 +74,7 @@ function AddFood({ onFormSubmit }){
             "ews": 0
         }
 
-        //alerts if empty input fields, submits if all have entries
+       
         if(foodName.length === 0){
             alert("Food name required!")
         }else if(foodCity.length === 0){
@@ -94,7 +89,6 @@ function AddFood({ onFormSubmit }){
         }
     }
 
-    //Renders form to gather new food submission data, includes FormInput and EmojiSelector components
     return (
     <div className="newFoodFormContainer">
         <h2> What Are You Bringing to Our Lil' Picnic? </h2>

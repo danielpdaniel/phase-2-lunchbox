@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom"
 
 function Foods({ foods }){
 
-    //makes shallow copy of foods array then sorts food objects alphabetically by name
     const foodsToSort = foods ? [...foods] : null;
     const alphabetizedFoods = foods ? foodsToSort.sort((a, b) => {
         const nameA = a.name.toUpperCase();
@@ -16,7 +15,6 @@ function Foods({ foods }){
        return 0
     }) : null
    
-    //renders a list of all the foods sorted alphabetically
     return (
         <div className="foodList">
             <h2> Food List ! </h2>

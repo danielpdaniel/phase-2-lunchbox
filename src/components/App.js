@@ -7,36 +7,19 @@ import AddFood from "./AddFood";
 import Home from "./Home";
 import Food from "./Food";
 
-/* Component Hierarchy:
-App
-|-NavBar - ( Home, AddFood, Foods, About)
-|-FoodList
-|-Food
-  |-LikesDislikes
-|-PicnicBasket
-  |-FoodItem
-    |-LikesDislikes
-|-AddFood
-  |-FormInput
-  |-EmojiSelector
-*/
-
 function App() {
-  //food objects array fetched from db held in state
+  
   const [foods, setFoods] = useState(false)
-  //keeps track of which Yum! and Ew! buttons have been clicked to keep them clicked even after routing away from PicnicBasket page
   const [clickedVotes, setClickedVotes] = useState([])
 
   const history = useHistory();
   
-  //fetch to get initial set of foods data as side effect
   useEffect(()=>{
     fetch("https://phase-2-lunchbox-data.onrender.com/foods")
     .then(resp=>resp.json())
     .then(data=>setFoods(data))
   },[])
 
-  //fetch to post new food to database + update PicnicBasket FoodItems + FoodList via state
   function handleFormSubmit(newFoodObj){
     fetch("https://phase-2-lunchbox-data.onrender.com/foods",{
       method: "POST",
@@ -52,7 +35,6 @@ function App() {
     })
   }
 
-   //Makes patch request to update likes/dislikes in database as well as state
    function handleVote(foodId, patchedFoodObj, upOrDown){
      fetch(`https://phase-2-lunchbox-data.onrender.com/foods/${foodId}`,{
          method: "PATCH",
@@ -65,7 +47,7 @@ function App() {
      .then(data=>{
       const patchedFoods = foods.map(food => food.id === foodId ? data : food)
       setFoods(patchedFoods);
-      //Uses a state controlled array held in App to determine whether "Yum!" and "Ew!" buttons have been clicked already so they don't re-render when PicnicBasket becomes unmounted then mounted again (need to refresh the page to reset clicked values)
+      
       const voteClickedAlready = clickedVotes.includes(foodId+upOrDown);
       const filteredVotes = clickedVotes.filter(vote => vote !== foodId+upOrDown)
       setClickedVotes(voteClickedAlready ? filteredVotes : [...clickedVotes, foodId+upOrDown])
@@ -73,7 +55,6 @@ function App() {
      
  }
 
-  //JSX to bundle components into App + provide routing for individual pages
   return (
     <div className="App">
       <NavBar />

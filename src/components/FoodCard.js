@@ -4,14 +4,12 @@ import LikesDislikes from "./LikesDislikes";
 function FoodCard({ food, onVote, clickedVotes }){
     const [clicked, setClicked] = useState(false)
 
-    //For handling styling and expanded food cards info
     function handleClick(){
         setClicked(clicked => !clicked)
     }
 
     const foodTitleClassName = food.name.length <= 15 ? "standardFoodTitle" : "longFoodTitle"
 
-    //Renders a card containing food data that can be expanded to show more data, includes LikesDislikes components for upvoting and downvoting
     return (
         <div className={!clicked ? "foodItem" : "foodItemExpanded"}>
             <h4 className={foodTitleClassName}>{food.name}</h4>

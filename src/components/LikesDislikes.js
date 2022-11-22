@@ -13,8 +13,6 @@ function LikesDislikes({ btnText, text, foodId, votesNum, onVote, clickedVotes }
         onVote(foodId, postBody, text)
     }
    
-
-    //Uses props passed down from App to render button, renders singular yum or ew if votesNum value is 1
     return (
         <div>
         <button onClick={handleClick} className={!clicked ? "yumsAndEws" : "clickedYumsAndEws"}>{btnText}</button>
